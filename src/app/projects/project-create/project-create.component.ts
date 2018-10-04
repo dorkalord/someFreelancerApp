@@ -16,7 +16,12 @@ export class ProjectCreateComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.formGroup = this.formBuilder.group({
-      'title': [null, Validators.required],
+      'Title': [null, Validators.required],
+      'Reviewer': [null, Validators.required],
+      'Technology': [null, Validators.required],
+      'Reward': [null, Validators.required],
+      'Deadline': [null, Validators.required],
+      'Description': [null, Validators.required],
     });
     
   }
@@ -25,7 +30,8 @@ export class ProjectCreateComponent implements OnInit {
   }
 
   test(){
-    console.log(this.formGroup)
+    console.log(this.formGroup.value)
   }
 
 }
+

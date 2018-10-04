@@ -7,15 +7,15 @@
   <mat-card-content>
     <form class="example-form" [formGroup]="formGroup">
       <mat-form-field>
-        <input matInput placeholder="Title" type="text" formControlName="title">
+        <input matInput placeholder="Title" type="text" formControlName="Title">
       </mat-form-field>
 
-      <!--<mat-form-field>
-          <input matInput placeholder="Reviewer">
+      <mat-form-field>
+          <input matInput placeholder="Reviewer"  formControlName="Reviewer">
         </mat-form-field>
 
       <mat-form-field class="field-third">
-        <mat-select placeholder="Technology">
+        <mat-select placeholder="Technology" formControlName="Technology" >
           <mat-option value="C++">
             C++
           </mat-option>
@@ -27,18 +27,18 @@
 
 
       <mat-form-field class="field-third">
-        <input matInput placeholder="Reward" type="number">
+        <input matInput placeholder="Reward" type="number" formControlName="Reward">
       </mat-form-field>
 
       <mat-form-field class="field-third">
-        <input matInput [matDatepicker]="picker" placeholder="Deadline">
+        <input matInput [matDatepicker]="picker" placeholder="Deadline" formControlName="Deadline">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field>
-        <textarea matInput placeholder="Description"></textarea>
-      </mat-form-field>-->
+        <textarea matInput placeholder="Description" formControlName="Description"></textarea>
+      </mat-form-field>
 
       <button mat-raised-button color="accent" (click)="test()"  >Create</button>
     </form>
