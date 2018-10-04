@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import {MetaModule} from './meta/meta.module';
+//import {MetaModule} from './meta/meta.module';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -44,14 +43,24 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';  
+
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { JobsComponent } from './jobs/jobs.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectCreateComponent } from './projects/project-create/project-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    JobsComponent,
+    ProjectsComponent,
+    ProjectCreateComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -92,10 +101,10 @@ import { AppRoutingModule } from './/app-routing.module';
     MatTooltipModule,
     MatTreeModule,
     BrowserModule,
-    FormsModule,
     HttpClientModule,
-    MetaModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent, NavbarComponent]

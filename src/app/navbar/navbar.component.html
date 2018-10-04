@@ -1,112 +1,110 @@
 <mat-sidenav #sidenav [(mode)]="over" [(opened)]="opened" class="bottom-to-top">
-    <div class="mt-2 py-3 text-white" fxLayout="column" fxLayoutAlign="center center">
-      <button mat-icon-button (click)="sidenav.toggle()" fxShow.sm="true" fxShow.gt-sm="false">
-        <mat-icon>arrow_back</mat-icon>
-      </button>
-      <div>
-        <a>
-          <span class="lead">Rexford</span>
-        </a>
-      </div>
-      <div>
-        <a>
-          <span class="">hello@khophi.co</span>
-        </a>
-      </div>
+  <div class="mt-2 py-3 text-white" fxLayout="column" fxLayoutAlign="center center">
+    <button mat-icon-button (click)="sidenav.toggle()" fxShow.sm="true" fxShow.gt-sm="false">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <div>
+      <a>
+        <span class="lead">Rexford</span>
+      </a>
     </div>
-    <div class="mt-3">
-      <mat-nav-list>
-        <a mat-list-item class="ml-2" style="font-size:15px;">
-          Homepage
-        </a>
-      </mat-nav-list>
-      <mat-accordion multi="true" [displayMode]="displayMode">
-        <mat-expansion-panel class="no-shadow">
-          <mat-expansion-panel-header fxLayout="row" [expandedHeight]="expandHeight" [collapsedHeight]="collapseHeight">
-            <mat-panel-title>
-              Buy Airtime
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <mat-nav-list class="ml-0" dense>
-            <mat-list-item>
-              <a href="#">AirtelTigo Airtime</a>
-              <!-- <button mat-icon-button class="mr-3">
+    <div>
+      <a>
+        <span class="">hello@khophi.co</span>
+      </a>
+    </div>
+  </div>
+  <div class="mt-3">
+    <mat-nav-list>
+      <a mat-list-item class="ml-2" style="font-size:15px;">
+        Homepage
+      </a>
+    </mat-nav-list>
+    <mat-accordion multi="true" [displayMode]="displayMode">
+      <mat-expansion-panel class="no-shadow">
+        <mat-expansion-panel-header fxLayout="row" [expandedHeight]="expandHeight" [collapsedHeight]="collapseHeight">
+          <mat-panel-title>
+            Buy Airtime
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list class="ml-0" dense>
+          <mat-list-item>
+            <a href="#">AirtelTigo Airtime</a>
+            <!-- <button mat-icon-button class="mr-3">
                         <mat-icon>info</mat-icon>
                       </button> -->
-            </mat-list-item>
-            <mat-list-item>
-              <a href="#">Vodafone Airtime</a>
-            </mat-list-item>
-            <mat-list-item>
-              <a href="#">MTN Airtime</a>
-            </mat-list-item>
-            <mat-list-item>
-              <a href="#">GLO Airtime</a>
-            </mat-list-item>
-          </mat-nav-list>
-        </mat-expansion-panel>
-        <mat-expansion-panel class="no-shadow my-0">
-          <mat-expansion-panel-header fxLayout="row" [expandedHeight]="expandHeight" [collapsedHeight]="collapseHeight">
-            <mat-panel-title>
-              Buy Airtime
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <mat-nav-list class="ml-0" dense>
-            <mat-list-item>
-              <a href="#">AirtelTigo Airtime</a>
-              <!-- <button mat-icon-button class="mr-3">
+          </mat-list-item>
+          <mat-list-item>
+            <a href="#">Vodafone Airtime</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a href="#">MTN Airtime</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a href="#">GLO Airtime</a>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel class="no-shadow my-0">
+        <mat-expansion-panel-header fxLayout="row" [expandedHeight]="expandHeight" [collapsedHeight]="collapseHeight">
+          <mat-panel-title>
+            Buy Airtime
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list class="ml-0" dense>
+          <mat-list-item>
+            <a href="#">AirtelTigo Airtime</a>
+            <!-- <button mat-icon-button class="mr-3">
                           <mat-icon>info</mat-icon>
                         </button> -->
-            </mat-list-item>
-            <mat-list-item>
-              <a href="#">Vodafone Airtime</a>
-            </mat-list-item>
-            <mat-list-item>
-              <a href="#">MTN Airtime</a>
-            </mat-list-item>
-            <mat-list-item>
-              <a href="#">GLO Airtime</a>
-            </mat-list-item>
-          </mat-nav-list>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </div>
-  </mat-sidenav>
+          </mat-list-item>
+          <mat-list-item>
+            <a href="#">Vodafone Airtime</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a href="#">MTN Airtime</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a href="#">GLO Airtime</a>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</mat-sidenav>
 
 <mat-sidenav-container class="container">
-
-
-
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="header-box-shadow">
       <button mat-icon-button (click)="sidenav.toggle()" fxShow.sm="true" fxShow.gt-sm="false">
         <mat-icon>menu</mat-icon>
       </button>
-      <button mat-button>
+
+      <button mat-button routerLink="/">
         <mat-icon class="mr-1">home</mat-icon>
         Home
       </button>
-      <span fxShow.lt-md="false" fxShow.gt-sm="true">
-        <button mat-button>
-          <mat-icon class="mr-1">link</mat-icon>
-          Jobs
-        </button>
 
-        <button mat-button [matMenuTriggerFor]="dropDown">
-          Projects
-          <mat-icon class="ml-1">arrow_drop_down</mat-icon>
+      <button mat-button routerLink="/jobs">
+        <mat-icon class="mr-1">work</mat-icon>
+        Jobs
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="dropDown">
+        Projects
+        <mat-icon class="ml-1">arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #dropDown="matMenu" overlapTrigger="false">
+        <button mat-menu-item>
+          <mat-icon>list</mat-icon>
+          <span>List</span>
         </button>
-        <mat-menu #dropDown="matMenu" overlapTrigger="false">
-          <button mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
-            <span>Create</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>voicemail</mat-icon>
-            <span>Dropdown Link 2</span>
-          </button>
-        </mat-menu>
-      </span>
+        <button mat-menu-item  routerLink="/projects/create">
+          <mat-icon>create</mat-icon>
+          <span>Create</span>
+        </button>
+      </mat-menu>
+
       <span class="example-spacer"></span>
 
       <button mat-icon-button [matMenuTriggerFor]="menu" fxShow.lt-md="true" fxShow.gt-sm="false">
@@ -133,5 +131,5 @@
     </mat-toolbar>
   </mat-sidenav-content>
 
-  
+
 </mat-sidenav-container>
