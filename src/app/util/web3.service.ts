@@ -75,4 +75,6 @@ export class Web3Service {
       this.ready = true;
     });
   }
+
+  
 }
