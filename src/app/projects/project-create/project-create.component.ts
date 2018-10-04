@@ -3,9 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Web3Service } from '../../util/web3.service';
 
 declare let require: any;
-const election_artifact = require('../../../../build/contracts/Election.json');
-const Web3 = require('web3');
-declare let window: any;
+const election_artifact = require('../../../../build/contracts/Conference.json');
 
 @Component({
   selector: 'app-project-create',
@@ -14,10 +12,9 @@ declare let window: any;
 })
 export class ProjectCreateComponent implements OnInit {
 
-  //obrazec = new FormControl('');
-
   formGroup: FormGroup;
-  private web3: any;
+  pogodba: any;
+  racun;
 
   constructor(private formBuilder: FormBuilder, private web3Service: Web3Service) {
     this.formGroup = this.formBuilder.group({
@@ -28,43 +25,46 @@ export class ProjectCreateComponent implements OnInit {
       'Deadline': [null, Validators.required],
       'Description': [null, Validators.required],
     });
-
-    if (typeof window.web3 !== 'undefined') {
-      // Use Mist/MetaMask's provider
-      this.web3 = new Web3(window.web3.currentProvider);
-    }
-
+    this.racun = "";
   }
 
   ngOnInit() {
-    /*this.web3Service.artifactsToContract(election_artifact)
-      .then((MetaCoinAbstraction) => {
-        console.log(MetaCoinAbstraction);
-    });*/
+    this.web3Service.artifactsToContract(election_artifact)
+      .then((AbstrakcijaPogodbe) => {
+        console.log(AbstrakcijaPogodbe);
+        this.pogodba = AbstrakcijaPogodbe;
 
-    this.web3.eth.getAccounts((err, accs)=>{
-      console.log("čakam račune1");
-      if (err == null){
-        console.log("err račune1");
-        console.log(accs);
-        console.log("err račune2")
-      }
-      console.log(err)
-    })
+        this.web3Service.accountsObservable.subscribe((accounts) => {
+          console.log(accounts);
+          this.racun = accounts[0];
+        }, (err) => {
+          console.log(err);
+        }, () => {
+          console.log("done");
+        });
+        
+      });
+
     
-    console.log("čakam račune");
-    this.web3Service.accountsObservable.subscribe((accounts) => {
-      console.log("accounts");
-      console.log(accounts)
-    }, (err) => {
-      console.log(err);
-    }, () => {
-      console.log("done");
-    });
+    
+  }
+
+  async createWork(){
+    try {
+      console.log("deploy");
+      const deployedPogodba = await this.pogodba.deployed();
+
+      console.log("create");
+      const transaction = await deployedPogodba.createConference.sendTransaction("lala", "neki", {from: this.racun})
+    } catch (error) {
+      console.log("napaka");
+      console.log(error);
+    }
   }
 
   test() {
     console.log(this.formGroup.value)
+    this.createWork();
   }
 
 }
