@@ -53,6 +53,7 @@ import { JobsComponent } from './jobs/jobs.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectCreateComponent } from './projects/project-create/project-create.component';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
+import { MetaSenderComponent } from './meta/meta-sender/meta-sender.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ProjectDetailsComponent } from './projects/project-details/project-deta
     JobsComponent,
     ProjectsComponent,
     ProjectCreateComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    MetaSenderComponent
   ],
   imports: [
     BrowserAnimationsModule,
