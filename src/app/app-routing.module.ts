@@ -4,12 +4,14 @@ import { MetaSenderComponent } from './meta/meta-sender/meta-sender.component';
 import { HomeComponent } from './home/home.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { ProjectCreateComponent } from './projects/project-create/project-create.component';
+import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'jobs', component: JobsComponent },
   
   { path: 'projects/create', component: ProjectCreateComponent },
+  { path: 'projects/:id', component: ProjectDetailsComponent },
 ];
  
 @NgModule({

@@ -52,6 +52,7 @@ import { HomeComponent } from './home/home.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectCreateComponent } from './projects/project-create/project-create.component';
+import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { ProjectCreateComponent } from './projects/project-create/project-create
     HomeComponent,
     JobsComponent,
     ProjectsComponent,
-    ProjectCreateComponent
+    ProjectCreateComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     BrowserAnimationsModule,
