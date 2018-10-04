@@ -54,6 +54,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectCreateComponent } from './projects/project-create/project-create.component';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
 import { MetaSenderComponent } from './meta/meta-sender/meta-sender.component';
+import { Web3Service } from './util/web3.service';
 
 @NgModule({
   declarations: [
@@ -110,7 +111,9 @@ import { MetaSenderComponent } from './meta/meta-sender/meta-sender.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    Web3Service
+  ],
   bootstrap: [AppComponent, NavbarComponent]
 })
 export class AppModule { }
