@@ -55,7 +55,11 @@ export class ProjectCreateComponent implements OnInit {
       const deployedPogodba = await this.pogodba.deployed();
 
       console.log("create");
-      const transaction = await deployedPogodba.createConference.sendTransaction("lala", "neki", {from: this.racun})
+      const transaction = await deployedPogodba.createConference.sendTransaction("aaaa", "aaaa", {from: this.racun})
+
+      console.log("kreirana transakcija");
+      console.log(transaction);
+
     } catch (error) {
       console.log("napaka");
       console.log(error);
